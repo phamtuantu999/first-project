@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <script type="text/JavaScript">
+    function check() {
+        if (myform.age.value<18){
+            document.writeln("<h4> Bạn chưa đủ 18 tuổi, <h4>"+myform.name.value);
+
+        }else{
+            document.writeln("<h4> Bạn đủ 18 tuổi, <h4>"+myform.name.value);
+        }
+    }
+    function losefocus() {
+        if(myform.name.value==""){
+            alert("Bạn phải nhập giá trị vào ô này");
+            myform.name.focus();
+            return false;
+        }
+    }
+    </script>
+    <body>
+        <form name="myform" onchange="losefocus()">
+            <h5><i>Nhập tên: </i></h5>
+            <input name="name" type="text" size="35" onblur="losefocus()">
+            <h5><i>Nhập tuổi: </i></h5>
+            <input name="age" type="number" size="5">
+            <input type="button" value="Kiểm tra" onclick="check()">
+            <input type="reset" value="Xóa">                                      
+        </form>
+    </body>
+</html>
